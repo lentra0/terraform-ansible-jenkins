@@ -1,4 +1,4 @@
-# Terraform + Ansible DevOps Demo
+# Terraform + Ansible + Jenkins Demo
 
 ## Файловая структура и назначение
 
