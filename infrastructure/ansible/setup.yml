@@ -1,0 +1,32 @@
+---
+- name: Configure web server
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Ensure web directory exists
+      file:
+        path: /var/www/html
+        state: directory
+        mode: '0755'
+
+    - name: Copy index template
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted

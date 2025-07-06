@@ -1,0 +1,10 @@
+all:
+  children:
+    webservers:
+      hosts:
+        web-server:
+          ansible_host: ${tf_output_web_ip}
+    jenkins:
+      hosts:
+        jenkins-server:
+          ansible_host: ${tf_output_jenkins_ip}

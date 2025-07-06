@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Demo</title>
+</head>
+<body>
+    <h1>Hello from {{ ansible_hostname }}</h1>
+    <p>This server was configured using Infrastructure as Code principles</p>
+    <p>Deployment time: {{ ansible_date_time.iso8601 }}</p>
+    <ul>
+        <li>Terraform for cloud infrastructure</li>
+        <li>Ansible for server configuration</li>
+        <li>Jenkins for automation</li>
+    </ul>
+    <p>Project created by Gleb for DevOps demonstration</p>
+</body>
+</html>
